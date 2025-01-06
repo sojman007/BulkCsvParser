@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Field_Map__c</fullName>
+    <description>Comma separated field map in the form: Column1:Field1,Column2:Field2,...,ColumnN:FieldN</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Comma separated field map in the form: Column1:Field1,Column2:Field2,...,ColumnN:FieldN</inlineHelpText>
+    <label>Field Map</label>
+    <length>100000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

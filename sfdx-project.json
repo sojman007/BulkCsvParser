@@ -1,0 +1,24 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true,
+      "package": "BulkCsvParser",
+      "versionName": "ver 1.4",
+      "versionNumber": "1.4.0.NEXT",
+      "versionDescription": ""
+    }
+  ],
+  "name": "BulkCsvParser",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "59.0",
+  "packageAliases": {
+    "BulkCsvParser": "0Hoaa000000006TCAQ",
+    "BulkCsvParser@1.0.0-1": "04taa000002Rsw1AAC",
+    "BulkCsvParser@1.1.0-1": "04taa000002RsxdAAC",
+    "BulkCsvParser@1.2.0-1": "04taa000002bXTiAAM",
+    "BulkCsvParser@1.3.0-1": "04taa000002l1nVAAQ",
+    "BulkCsvParser@1.4.0-1": "04taa000002kwFzAAI"
+  }
+}

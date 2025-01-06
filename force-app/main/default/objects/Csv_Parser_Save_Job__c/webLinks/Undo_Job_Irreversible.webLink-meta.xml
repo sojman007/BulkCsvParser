@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Undo_Job_Irreversible</fullName>
+    <availability>online</availability>
+    <description>Delete records saved in this Job</description>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Undo Job (Irreversible)</masterLabel>
+    <openType>noSidebar</openType>
+    <page>CsvParserJobUndo</page>
+    <protected>false</protected>
+</WebLink>

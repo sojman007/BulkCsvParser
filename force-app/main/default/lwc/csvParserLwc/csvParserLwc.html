@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title={parserTitleText}>
+
+        <div class="slds-card__bod slds-card__body_inner">
+           
+
+                <template if:true={uploadAndConfigPage}>
+                    <c-csv-upload-and-config></c-csv-upload-and-config>
+                </template>
+                <template if:true={manualMappingPage}>
+                    <c-csv-data-mapping config-id={configId}></c-csv-data-mapping>
+                </template>
+                <template if:true={dataPreviewPage}>
+                    <c-csv-mapped-data-preview sobject-api-name={sobjectApiName} field-map={fieldMap} csv-file={csvFile} look-up-configs={lookupConfigs} record-type-id={recordTypeId}></c-csv-mapped-data-preview>
+                </template>
+            
+        </div>
+        <div slot="footer">
+            <lightning-button-group>
+                <template if:true={displayPreviousButton}>
+                    <lightning-button onclick={navigateToPrevious} label="Previous"></lightning-button>
+                </template>
+                <template if:true={displayNextButton}>
+                    <lightning-button onclick={navigateToNext} label="Next"></lightning-button>
+                </template>
+            </lightning-button-group>
+        </div>
+    </lightning-card>
+</template>

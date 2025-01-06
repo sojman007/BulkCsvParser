@@ -1,0 +1,19 @@
+<template>
+    <lightning-layout horizontal-align="center" multiple-rows="true">
+
+        <lightning-layout-item size="6" padding="around-small">
+            <lightning-input accept=".csv" label="Upload CSV File" value={csvFile} type="file" onchange={handleFileUploaded}></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="6" padding="around-small">
+            <lightning-combobox options={options} onchange={handleOptionSelected} value={selectedOption} label="Select A Pre Saved Mapping Configuration">
+            </lightning-combobox>
+        </lightning-layout-item>
+    </lightning-layout>
+    <lightning-layout horizontal-align="spread">
+        <lightning-layout-item size="8" padding="around-small">
+            <p>Uploaded File Name : {fileName} </p>
+        </lightning-layout-item>
+    </lightning-layout>
+
+    
+</template>

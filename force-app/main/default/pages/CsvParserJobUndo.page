@@ -1,0 +1,16 @@
+<apex:page standardController="Csv_Parser_Save_Job__c" extensions="CsvParserJobUndoController">
+    <apex:pageMessages></apex:pageMessages>
+    <apex:form>
+        <apex:pageBlock title="Are You Sure You Want To Undo ?">
+            This Action CANNOT be reversed
+            
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton rendered="{! !complete}" value="Yes , Undo" action="{! undo}"></apex:commandButton>
+                <apex:commandButton rendered="{! !complete}" value="No , Cancel" action="{! navToParserHomePage}"></apex:commandButton>
+                <apex:commandButton rendered="{! complete}" value="Done" action="{! navToParserHomePage}"></apex:commandButton>
+            </apex:pageBlockButtons>
+    
+        </apex:pageBlock>
+
+    </apex:form>
+</apex:page>

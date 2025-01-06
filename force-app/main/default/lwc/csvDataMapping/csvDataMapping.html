@@ -1,0 +1,56 @@
+<template>
+    <lightning-layout multiple-rows="true" horizontal-align="spread">
+        <lightning-layout-item size={computeLayoutSizeUpper} padding="around-small">
+            <lightning-combobox options={sourceObjectOptions} disabled={disableSelectObject} label="Select Salesforce Object" value={selectedSobject} onchange={onChangeObject} name="main"></lightning-combobox>
+        </lightning-layout-item>
+        <template if:true={displayRecordTypeSelection}>
+            <lightning-layout-item size={computeLayoutSizeUpper} padding="around-small">
+                <lightning-combobox options={recordTypeOptions}  label="Select Record Type" value={selectedRecordTypeId} onchange={onChangeField} name="recordType"></lightning-combobox>
+            </lightning-layout-item>
+        </template>
+
+        <lightning-layout-item size={computeLayoutSizeUpper} padding="around-small">
+            <lightning-combobox options={sourceCsvOptions} label="Select CSV Column" value={selectedSourceField} onchange={onChangeField} name="source"></lightning-combobox>
+        </lightning-layout-item>
+        <lightning-layout-item size={computeLayoutSizeUpper} padding="around-small">
+            <lightning-combobox options={destinationFieldOptions} label="Select Salesforce Field" value={selectedDestinationField} onchange={onChangeField} name="destination"></lightning-combobox>
+        </lightning-layout-item>
+        
+
+
+        <lightning-layout-item size="3" padding="around-small">
+            <lightning-input type="checkbox" label="Associate With Existing Records ? " checked={hasParents} onchange={toggleHasParents}></lightning-input>
+        </lightning-layout-item>
+        <template if:true={hasParents}>
+            <lightning-layout-item size="3" padding="around-small">
+                <lightning-combobox options={sourceObjectOptions} label="Select Related Salesforce Object" value={selectedParentSobject} onchange={onChangeObject} name="parent"></lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item size="3" padding="around-small">
+                <lightning-combobox options={sourceCsvOptions} label="Select Key Column On CSV" value={selectedLookupCsvField} onchange={onChangeField} name="lookup"></lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item size="3" padding="around-small">
+                <lightning-combobox options={lookupFieldOptions} label="Select Salesforce Lookup Field" value={selectedParentIdentifierField} onchange={onChangeField} name="sflookup"></lightning-combobox>
+            </lightning-layout-item>
+
+        </template>
+
+        <lightning-layout-item size="12" padding="around-small">
+            <lightning-button-group>
+                <lightning-button label="Add Current Selected Fields" onclick={addSelection}></lightning-button>
+                <lightning-button label="Add Current Look up Config" onclick={addLookUpSelection}></lightning-button>
+                <lightning-button label="Save /Update Configs" onclick={saveAsConfig}></lightning-button>
+            </lightning-button-group>
+        </lightning-layout-item>
+    </lightning-layout>
+    <lightning-layout>
+        <lightning-layout-item padding="around-small" size="5" title="Field Mapping">
+             <lightning-datatable key-field="source" columns={columnNames} onrowaction={handleRowAction} data={fieldMappingData} title="Field Mappings">
+            </lightning-datatable>
+        </lightning-layout-item>
+        
+        <lightning-layout-item padding="around-small" size="7" title="Look Up Field mapping">
+            <lightning-datatable key-field="lookupObject" columns={lookupColumnNames} onrowaction={handleRowAction} data={lookupFieldMappingData} title="Lookup Field Mapping" >
+           </lightning-datatable>
+       </lightning-layout-item>
+    </lightning-layout>
+</template>

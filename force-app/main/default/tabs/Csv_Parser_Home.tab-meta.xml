@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Csv parser tool to help parse records in CSV to Records in Salesforce</description>
+    <label>Csv Parser Home</label>
+    <lwcComponent>csvParserLwc</lwcComponent>
+    <motif>Custom19: Wrench</motif>
+</CustomTab>

@@ -1,0 +1,41 @@
+<template>
+    <lightning-layout multiple-rows="true" horizontal-align="spread">
+        <lightning-layout-item size="12" padding="around-medium">
+            <span class="slds-text-align_left slds-text-heading_small">CSV Parser Monitoring Wizard</span>
+        </lightning-layout-item>
+        
+        <lightning-layout-item padding="around-medium" size="6">
+            <lightning-input label="Converted Object Type" value={sobjectName} disabled></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-medium" size="6">
+            <lightning-input label="Status" value={fileProcessingStatus} disabled></lightning-input>
+         </lightning-layout-item>
+        <lightning-layout-item padding="around-medium" size="6">
+             <lightning-input label="Number Of Records Converted From CSV" value={totalNumberOfRecords} disabled></lightning-input>
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-medium" size="6">
+            <lightning-input label="Number of Records Not Converted From CSV" value={failedRecordCount} disabled></lightning-input>
+       </lightning-layout-item>
+       <lightning-layout-item padding="around-medium" size="6">
+        <lightning-input label="Number Of Records Saved To DB" value={dbSuccessCount} disabled></lightning-input>
+   </lightning-layout-item>
+
+   <lightning-layout-item padding="around-medium" size="6">
+    <lightning-input label="Number Of Records Not Saved To DB" value={dbFailCount} disabled></lightning-input>
+</lightning-layout-item>
+
+
+   <lightning-layout-item padding="around-medium" size="12">
+    <lightning-input-rich-text disabled label-visible="true" formats={formats} label="Error Stream" value={errorStream} onchange={handleErrorStreamChange}></lightning-input-rich-text>
+</lightning-layout-item>
+       <template if:true={done}>
+        <lightning-layout-item padding="around-medium" size="6">
+            <lightning-button label="Done" variant="brand" onclick={handleGoToRecordListView}></lightning-button>
+        </lightning-layout-item>
+    </template>
+
+    </lightning-layout>
+    
+    
+</template>
